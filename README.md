@@ -1,0 +1,2 @@
+# BaseIssuesChecker
+IssuesのJSONからIssuesの更新確認ベースモジュール
