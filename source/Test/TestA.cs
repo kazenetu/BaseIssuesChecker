@@ -43,5 +43,7 @@ namespace Test
       var issues = JsonSerializer.Deserialize<List<IssueEntity>>(jsonText);
 
       Assert.True(issues.count == 1);
+      Assert.True(issues[0].number == 2);
+      Assert.True(issues[0].login. == "user");
     }
 }
