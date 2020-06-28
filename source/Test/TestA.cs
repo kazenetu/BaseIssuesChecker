@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Test
 {
-  [Trait("テスト", nameof(ClassTest))]
+  [Trait("テスト", nameof(TestA))]
   public class TestA
   {
     [Fact]
