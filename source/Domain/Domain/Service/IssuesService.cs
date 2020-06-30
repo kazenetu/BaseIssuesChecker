@@ -17,11 +17,17 @@ namespace Domain.Domain.Service
     /// <returns>最新差分Issue情報</returns>
     public List<IssueEntity> GetIssues(IIssueRepository issueRepository,IApiRepository apiRepository)
     {
+      // 前回取得結果を取得
       var issuesEntity = IssuesEntity.Create(issueRepository.GetIssues());
-      var result = issuesEntity.GetModifyIssues(apiRepository.GetLatestIssues());
-      issueRepository.SetIssues(result);
 
-      return result;
+      // APIから最新Issueを取得
+      var lastedIssues = apiRepository.GetLatestIssues();
+
+      // 最新Issueを反映
+      issueRepository.SetIssues(lastedIssues);
+
+      // 前回から更新された結果を返す
+      return issuesEntity.GetModifyIssues(lastedIssues);
     }
   }
 }
