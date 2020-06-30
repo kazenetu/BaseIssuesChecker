@@ -5,6 +5,7 @@ using System.Text;
 using Xunit;
 using Test.Repository;
 using Domain.Domain.Service;
+using Domain.Application;
 
 namespace Test
 {
@@ -46,10 +47,10 @@ namespace Test
 ]      
       ";
 
-      var service = new IssuesService();
+      var application = new IssuesApplication();
 
 
-      var issues = service.GetIssues(issueRepository, apiRepository);
+      var issues = application.GetIssues(issueRepository, apiRepository);
 
       Assert.True(issues.Count == 1);
       Assert.True(issues[0].number == 2);
@@ -87,9 +88,9 @@ namespace Test
 ]      
       ";
 
-      var service = new IssuesService();
+      var appplication = new IssuesApplication();
 
-      service.GetIssues(issueRepository, apiRepository);
+      appplication.GetIssues(issueRepository, apiRepository);
 
       apiRepository.JsonText = @"
 [
@@ -118,7 +119,7 @@ namespace Test
     }
 ]      
       ";
-      var issues = service.GetIssues(issueRepository, apiRepository);
+      var issues = appplication.GetIssues(issueRepository, apiRepository);
 
       Assert.True(issues.Count == 1);
       Assert.True(issues[0].number == 2);
@@ -129,7 +130,7 @@ namespace Test
     public void AddIssuesTest()
     {
 
-      var service = new IssuesService();
+      var application = new IssuesApplication();
 
       apiRepository.JsonText = @"
 [
@@ -159,7 +160,7 @@ namespace Test
 ]      
       ";
 
-      service.GetIssues(issueRepository, apiRepository);
+      application.GetIssues(issueRepository, apiRepository);
 
 
       apiRepository.JsonText = @"
@@ -213,7 +214,7 @@ namespace Test
 ]      
       ";
 
-      var issues = service.GetIssues(issueRepository, apiRepository);
+      var issues = application.GetIssues(issueRepository, apiRepository);
 
       Assert.True(issues.Count == 1);
       Assert.True(issues[0].number == 3);
@@ -224,7 +225,7 @@ namespace Test
     public void RemoveIssuesTest()
     {
 
-      var service = new IssuesService();
+      var application = new IssuesApplication();
 
       apiRepository.JsonText = @"
 [
@@ -254,7 +255,7 @@ namespace Test
 ]      
       ";
 
-      service.GetIssues(issueRepository, apiRepository);
+      application.GetIssues(issueRepository, apiRepository);
 
 
       apiRepository.JsonText = @"
@@ -308,7 +309,7 @@ namespace Test
 ]      
       ";
 
-      var issues = service.GetIssues(issueRepository, apiRepository);
+      var issues = application.GetIssues(issueRepository, apiRepository);
 
       Assert.True(issues.Count == 0);
     }
@@ -317,7 +318,7 @@ namespace Test
     public void AddAndModifyIssuesTest()
     {
 
-      var service = new IssuesService();
+      var application = new IssuesApplication();
 
       apiRepository.JsonText = @"
 [
@@ -347,7 +348,7 @@ namespace Test
 ]      
       ";
 
-      service.GetIssues(issueRepository, apiRepository);
+      application.GetIssues(issueRepository, apiRepository);
 
 
       apiRepository.JsonText = @"
@@ -401,7 +402,7 @@ namespace Test
 ]      
       ";
 
-      var issues = service.GetIssues(issueRepository, apiRepository);
+      var issues = application.GetIssues(issueRepository, apiRepository);
 
       Assert.True(issues.Count == 2);
       Assert.True(issues[0].number == 2);
@@ -414,7 +415,7 @@ namespace Test
     public void AddAndRemoveIssuesTest()
     {
 
-      var service = new IssuesService();
+      var application = new IssuesApplication();
 
       apiRepository.JsonText = @"
 [
@@ -444,7 +445,7 @@ namespace Test
 ]      
       ";
 
-      service.GetIssues(issueRepository, apiRepository);
+      application.GetIssues(issueRepository, apiRepository);
 
 
       apiRepository.JsonText = @"
@@ -498,7 +499,7 @@ namespace Test
 ]      
       ";
 
-      var issues = service.GetIssues(issueRepository, apiRepository);
+      var issues = application.GetIssues(issueRepository, apiRepository);
 
       Assert.True(issues.Count == 1);
       Assert.True(issues[0].number == 3);
