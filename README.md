@@ -7,8 +7,9 @@
 ConsoleAppを実行する。  
 ```sh
 # カレントディレクトリ：リポジトリルート
-dotnet run --project ./source/ConsoleApp/ConsoleApp.csproj
+dotnet run --project ./source/ConsoleApp/ConsoleApp.csproj <IssuesAPI>
 ```
+※IssuesAPI：[GitHub REST API v3 list-repository-issues](https://developer.github.com/v3/issues/#list-repository-issues)に対応したURI
 
 ## テスト方法
 Testを実行する。  
