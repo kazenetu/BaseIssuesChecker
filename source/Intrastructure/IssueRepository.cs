@@ -12,7 +12,7 @@ namespace Intrastructure
   /// <remarks>singletonパターンで実装</remarks>
   public class IssueRepository : IIssueRepository
   {
-    private const string JSONFilePath= "./local.json";
+    private const string JSONFileName = "local.json";
 
     /// <summary>
     /// Issueリポジトリインスタンス
@@ -25,11 +25,17 @@ namespace Intrastructure
     private List<IssueEntity> issues = new List<IssueEntity>();
 
     /// <summary>
+    /// 基本パス：実行ファイルのパス
+    /// </summary>
+    private string baseDirectory;
+
+    /// <summary>
     /// コンストラクタ
     /// </summary>
     /// <remarks>非公開</remarks>
     private IssueRepository()
     {
+      baseDirectory = Path.GetDirectoryName(typeof(IssueRepository).Assembly.Location);
     }
 
     /// <summary>
@@ -78,6 +84,8 @@ namespace Intrastructure
     /// </summary>
     private void loadIssueFile()
     {
+      var JSONFilePath = Path.Combine(baseDirectory, JSONFileName);
+
       // ファイルがない場合は終了
       if (!File.Exists(JSONFilePath))
       {
@@ -98,6 +106,8 @@ namespace Intrastructure
     private void saveIssueFile()
     {
       var json = JsonSerializer.Serialize(issues);
+
+      var JSONFilePath = Path.Combine(baseDirectory, JSONFileName);
       using (var sw = new StreamWriter(JSONFilePath))
       {
         sw.Write(json);
