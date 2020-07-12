@@ -1,4 +1,5 @@
 ﻿using Domain.Application;
+using Domain.Application.Model;
 using Intrastructure;
 using System;
 

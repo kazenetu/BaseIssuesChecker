@@ -1,4 +1,4 @@
-using Domain.Domain.Entity;
+using Domain.Application.Model;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text;
