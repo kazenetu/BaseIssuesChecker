@@ -1,6 +1,7 @@
 using Domain.Domain.Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Domain.Application.Model
 {
@@ -45,7 +46,7 @@ namespace Domain.Application.Model
     /// <returns>Issueモデルリスト</returns>
     internal static List<IssueModel> CreateIssues(List<IssueEntity> entities)
     {
-      return entities.select(entity=>new IssueModel(entity)).ToList();
+      return entities.Select(entity=>new IssueModel(entity)).ToList();
     }
   }
 }
