@@ -1,6 +1,6 @@
 using System;
 
-namespace Domain.Domain.Entity
+namespace Domain.Domain.Issue
 {
   /// <summary>
   /// ユーザーエンティティ

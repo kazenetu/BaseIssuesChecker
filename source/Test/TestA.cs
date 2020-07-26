@@ -1,10 +1,5 @@
-using Domain.Application.Model;
-using System.Collections.Generic;
-using System.Text.Json;
-using System.Text;
 using Xunit;
 using Test.Repository;
-using Domain.Domain.Service;
 using Domain.Application;
 
 namespace Test

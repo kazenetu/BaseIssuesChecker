@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
 
-namespace Domain.Domain.Entity
+namespace Domain.Domain.Issue
 {
   /// <summary>
   /// Isuueエンティティ

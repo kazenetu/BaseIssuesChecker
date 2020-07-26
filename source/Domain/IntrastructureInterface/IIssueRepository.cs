@@ -1,4 +1,4 @@
-﻿using Domain.Domain.Entity;
+﻿using Domain.Domain.Issue;
 using System.Collections.Generic;
 
 namespace Domain.IntrastructureInterface
