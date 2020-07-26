@@ -1,6 +1,7 @@
 ﻿using Domain.Domain.Issue;
 using Domain.IntrastructureInterface;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 
 namespace Test.Repository
@@ -11,7 +12,8 @@ namespace Test.Repository
 
     public List<IssueEntity> GetLatestIssues()
     {
-      return JsonSerializer.Deserialize<List<IssueEntity>>(JsonText);
+      var result = JsonSerializer.Deserialize<List<JsonIssue>>(JsonText);
+      return result.Select(item => item.ToDomainEntity()).ToList();
     }
   }
 }
