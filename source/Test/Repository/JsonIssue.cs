@@ -19,5 +19,23 @@ namespace Test.Repository
     public int id { set; get; }
     public string comments_url { set; get; }
     public string html_url { set; get; }
+
+    IssueEntity ToDomainEntity()
+    {
+        // HACK コンストラクタのパラメータによるインスタンス生成
+        return new IssueEntity()
+        {
+            number = number,
+            title = title,
+            user = user.ToDomainEntity(),
+            state = state,
+            created_at = created_at,
+            updated_at = updated_at,
+            body = body,
+            id = id,
+            comments_url = comments_url,
+            html_url = html_url
+        };
+    }
   }
 }
