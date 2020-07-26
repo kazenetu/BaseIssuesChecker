@@ -1,4 +1,4 @@
-using Domain.Domain.Entity;
+using Domain.Domain.Issue;
 using System;
 
 namespace Domain.Application.Model

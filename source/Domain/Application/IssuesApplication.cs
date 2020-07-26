@@ -1,6 +1,5 @@
-﻿using Domain.Domain.Entity;
+﻿using Domain.Domain.Issue;
 using Domain.Application.Model;
-using Domain.Domain.Service;
 using Domain.IntrastructureInterface;
 using System.Collections.Generic;
 

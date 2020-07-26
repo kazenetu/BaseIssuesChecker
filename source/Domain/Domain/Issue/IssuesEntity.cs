@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Domain.Domain.Entity
+namespace Domain.Domain.Issue
 {
   public class IssuesEntity
   {

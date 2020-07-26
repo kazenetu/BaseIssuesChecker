@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Text;
 using Xunit;
 using Test.Repository;
-using Domain.Domain.Service;
+using Domain.Domain.Issue;
 using Domain.Application;
 
 namespace Test

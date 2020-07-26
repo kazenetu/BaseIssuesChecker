@@ -1,8 +1,8 @@
-﻿using Domain.Domain.Entity;
+﻿using Domain.Domain.Issue;
 using Domain.IntrastructureInterface;
 using System.Collections.Generic;
 
-namespace Domain.Domain.Service
+namespace Domain.Domain.Issue
 {
   /// <summary>
   /// Issue用サービス
