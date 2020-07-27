@@ -6,7 +6,7 @@ namespace Test.Repository
   /// <summary>
   /// Json用ユーザーエンティティ
   /// </summary>
-  public class JsouUser
+  public class JsonUser
   {
     public string login { set; get; }
     public string email { set; get; }
