@@ -18,7 +18,7 @@ namespace Test.Repository
     public string html_url { set; get; }
     public string avatar_url { set; get; }
 
-    UserEntity ToDomainEntity()
+    internal UserEntity ToDomainEntity()
     {
         // HACK コンストラクタのパラメータによるインスタンス生成
         return new UserEntity()

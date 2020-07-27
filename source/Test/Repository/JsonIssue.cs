@@ -20,7 +20,7 @@ namespace Test.Repository
     public string comments_url { set; get; }
     public string html_url { set; get; }
 
-    IssueEntity ToDomainEntity()
+    internal IssueEntity ToDomainEntity()
     {
         // HACK コンストラクタのパラメータによるインスタンス生成
         return new IssueEntity()
