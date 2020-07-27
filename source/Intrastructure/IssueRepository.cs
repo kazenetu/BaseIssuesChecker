@@ -2,6 +2,7 @@
 using Domain.IntrastructureInterface;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace Intrastructure
@@ -97,7 +98,8 @@ namespace Intrastructure
       {
         json = sr.ReadToEnd();
       }
-      issues.AddRange(JsonSerializer.Deserialize<List<IssueEntity>>(json));
+      var jsonIssues = JsonSerializer.Deserialize<List<JsonIssue>>(json);
+      issues.AddRange(jsonIssues.Select(item => item.ToDomainEntity()).ToList());
     }
 
     /// <summary>

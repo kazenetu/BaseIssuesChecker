@@ -1,6 +1,7 @@
 ﻿using Domain.Domain.Issue;
 using Domain.IntrastructureInterface;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 
@@ -33,7 +34,8 @@ namespace Intrastructure
         var response = client.GetAsync(uri).Result.Content.ReadAsStringAsync();
         json = response.Result;
       }
-      return JsonSerializer.Deserialize<List<IssueEntity>>(json);
+      var result = JsonSerializer.Deserialize<List<JsonIssue>>(json);
+      return result.Select(item => item.ToDomainEntity()).ToList();
     }
   }
 }
