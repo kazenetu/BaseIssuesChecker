@@ -22,20 +22,19 @@ namespace Test.Repository
 
     internal IssueEntity ToDomainEntity()
     {
-        // HACK コンストラクタのパラメータによるインスタンス生成
-        return new IssueEntity()
-        {
-            number = number,
-            title = title,
-            user = user.ToDomainEntity(),
-            state = state,
-            created_at = created_at,
-            updated_at = updated_at,
-            body = body,
-            id = id,
-            comments_url = comments_url,
-            html_url = html_url
-        };
+        // コンストラクタのパラメータによるインスタンス生成
+        return new IssueEntity(
+          number,
+          title,
+          user.ToDomainEntity(),
+          state,
+          created_at,
+          updated_at,
+          body,
+          id,
+          comments_url,
+          html_url
+      );
     }
   }
 }

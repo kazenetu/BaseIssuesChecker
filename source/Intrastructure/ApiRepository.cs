@@ -26,7 +26,7 @@ namespace Intrastructure
     /// 最新Issueをネットワークから取得する
     /// </summary>
     /// <returns>最新Issueリスト</returns>
-    public List<IssueEntity> GetLatestIssues()
+    public IssuesEntity GetLatestIssues()
     {
       var json = string.Empty;
       using (var client = new HttpClient())
@@ -35,7 +35,7 @@ namespace Intrastructure
         json = response.Result;
       }
       var result = JsonSerializer.Deserialize<List<JsonIssue>>(json);
-      return result.Select(item => item.ToDomainEntity()).ToList();
+      return IssuesEntity.Create(result.Select(item => item.ToDomainEntity()).ToList());
     }
   }
 }

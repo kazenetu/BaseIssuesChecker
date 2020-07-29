@@ -8,6 +8,6 @@ namespace Domain.IntrastructureInterface
   /// </summary>
   public interface IApiRepository
   {
-    List<IssueEntity> GetLatestIssues();
+    IssuesEntity GetLatestIssues();
   }
 }

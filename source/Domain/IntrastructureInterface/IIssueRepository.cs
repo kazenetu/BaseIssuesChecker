@@ -8,7 +8,7 @@ namespace Domain.IntrastructureInterface
   /// </summary>
   public interface IIssueRepository
   {
-    List<IssueEntity> GetIssues();
-    bool SetIssues(List<IssueEntity> target);
+    IssuesEntity GetIssues();
+    bool SetIssues(IssuesEntity target);
   }
 }

@@ -20,19 +20,18 @@ namespace Test.Repository
 
     internal UserEntity ToDomainEntity()
     {
-        // HACK コンストラクタのパラメータによるインスタンス生成
-        return new UserEntity()
-        {
-            login = login,
-            email = email,
-            type = type,
-            site_admin = site_admin,
-            created_at = created_at,
-            id = id,
-            url = url,
-            html_url = html_url,
-            avatar_url = avatar_url
-        };
+        // コンストラクタのパラメータによるインスタンス生成
+        return new UserEntity(
+            login,
+            email,
+            type,
+            site_admin,
+            created_at,
+            id ,
+            url,
+            html_url,
+            avatar_url
+        );
     }
   }
 }

@@ -10,10 +10,10 @@ namespace Test.Repository
   {
     public string JsonText { set; get; }
 
-    public List<IssueEntity> GetLatestIssues()
+    public IssuesEntity GetLatestIssues()
     {
       var result = JsonSerializer.Deserialize<List<JsonIssue>>(JsonText);
-      return result.Select(item => item.ToDomainEntity()).ToList();
+      return IssuesEntity.Create(result.Select(item => item.ToDomainEntity()).ToList());
     }
   }
 }
