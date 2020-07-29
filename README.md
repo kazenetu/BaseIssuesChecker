@@ -25,11 +25,11 @@ dotnet test ./source/Test/Test.csproj
   * 想定するIssuesのJSONは[GitHub REST API v3](https://developer.github.com/v3/issues/#list-repository-issues)
 
 * Intrastructure/IssueRepository.cs  
-  * Issues(IssueEntityのリスト)の永続化を担当する。
-  * Issues(IssueEntityのリスト)をシリアライズしたローカルファイル「local.json」にて管理する。
+  * IssuesEntityの永続化を担当する。
+  * IssuesEntityをシリアライズしたローカルファイル「local.json」にて管理する。
 
 ### Domain層のエントリクラス(ApplicationService)
 * Domain/Application/IssuesApplication.cs
   * ApiRepositoryとIssueRepositoryをパラメータに設定する。
-  * ApiRepositoryから受け取った最新Issues(IssueEntityのリスト)と保持している前回のIssuesと比較し、結果(IssueEntityのリスト)を返す。
-  * 最新Issues(IssueEntityのリスト)をIssueRepositoryで永続化する。
+  * ApiRepositoryから受け取った最新Issues(IssuesEntity)と保持している前回のIssuesと比較し、結果(IIssuesEntity)を返す。
+  * 最新Issues(IssuesEntity)をIssueRepositoryで永続化する。
