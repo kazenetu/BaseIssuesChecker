@@ -1,5 +1,4 @@
 ﻿using Domain.IntrastructureInterface;
-using System.Collections.Generic;
 
 namespace Domain.Domain.Issue
 {
