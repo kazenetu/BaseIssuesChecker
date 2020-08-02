@@ -27,7 +27,8 @@ namespace Domain.Domain.Issue
       string url,
       string html_url,
       string avatar_url
-    ){
+    )
+    {
       this.login = login;
       this.email = email;
       this.type = type;

@@ -46,7 +46,7 @@ namespace Domain.Application.Model
     /// <returns>Issueモデルリスト</returns>
     internal static List<IssueModel> CreateIssues(IssuesEntity entity)
     {
-      return entity.Issues.Select(issue=>new IssueModel(issue)).ToList();
+      return entity.Issues.Select(issue => new IssueModel(issue)).ToList();
     }
   }
 }

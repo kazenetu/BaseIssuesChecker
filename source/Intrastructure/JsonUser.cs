@@ -20,18 +20,18 @@ namespace Intrastructure
 
     internal UserEntity ToDomainEntity()
     {
-        // コンストラクタのパラメータによるインスタンス生成
-        return new UserEntity(
-            login,
-            email,
-            type,
-            site_admin,
-            created_at,
-            id ,
-            url,
-            html_url,
-            avatar_url
-        );
+      // コンストラクタのパラメータによるインスタンス生成
+      return new UserEntity(
+          login,
+          email,
+          type,
+          site_admin,
+          created_at,
+          id,
+          url,
+          html_url,
+          avatar_url
+      );
     }
   }
 }

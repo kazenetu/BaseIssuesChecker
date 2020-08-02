@@ -1,7 +1,6 @@
 using Domain.Domain.Issue;
 using System;
 
-
 namespace Test.Repository
 {
   /// <summary>
@@ -22,19 +21,19 @@ namespace Test.Repository
 
     internal IssueEntity ToDomainEntity()
     {
-        // コンストラクタのパラメータによるインスタンス生成
-        return new IssueEntity(
-          number,
-          title,
-          user.ToDomainEntity(),
-          state,
-          created_at,
-          updated_at,
-          body,
-          id,
-          comments_url,
-          html_url
-      );
+      // コンストラクタのパラメータによるインスタンス生成
+      return new IssueEntity(
+        number,
+        title,
+        user.ToDomainEntity(),
+        state,
+        created_at,
+        updated_at,
+        body,
+        id,
+        comments_url,
+        html_url
+    );
     }
   }
 }

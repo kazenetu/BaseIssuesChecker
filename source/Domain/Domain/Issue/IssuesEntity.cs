@@ -5,7 +5,7 @@ namespace Domain.Domain.Issue
 {
   public class IssuesEntity
   {
-    public List<IssueEntity> Issues{private set; get;}  = new List<IssueEntity>();
+    public List<IssueEntity> Issues { private set; get; } = new List<IssueEntity>();
 
     /// <summary>
     /// コンストラクタ
@@ -23,7 +23,7 @@ namespace Domain.Domain.Issue
     public IssuesEntity GetModifyIssues(IssuesEntity lastedIssueEntities)
     {
       // 現在のIssuesと同じものを除外
-      var excecpEntities = lastedIssueEntities.Issues.Where(entity =>entity.state == "open" && Issues.Any(issue => issue.number == entity.number && issue.updated_at == entity.updated_at));
+      var excecpEntities = lastedIssueEntities.Issues.Where(entity => entity.state == "open" && Issues.Any(issue => issue.number == entity.number && issue.updated_at == entity.updated_at));
       return IssuesEntity.Create(lastedIssueEntities.Issues.Where(entity => entity.state == "open").Except(excecpEntities).ToList());
     }
 

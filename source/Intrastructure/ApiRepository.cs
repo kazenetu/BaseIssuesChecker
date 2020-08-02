@@ -10,7 +10,7 @@ namespace Intrastructure
   /// <summary>
   /// API呼び出しリポジトリ
   /// </summary>
-  public class ApiRepository: IApiRepository
+  public class ApiRepository : IApiRepository
   {
     private string uri = "";
 

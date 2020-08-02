@@ -29,7 +29,8 @@ namespace Domain.Domain.Issue
       int id,
       string comments_url,
       string html_url
-    ){
+    )
+    {
       this.number = number;
       this.title = title;
       this.user = user;
