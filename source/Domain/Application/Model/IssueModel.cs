@@ -42,11 +42,11 @@ namespace Domain.Application.Model
     /// <summary>
     /// インスタンス生成
     /// </summary>
-    /// <param name="entities">対象エンティティ</param>
+    /// <param name="entity">対象エンティティ</param>
     /// <returns>Issueモデルリスト</returns>
-    internal static List<IssueModel> CreateIssues(List<IssueEntity> entities)
+    internal static List<IssueModel> CreateIssues(IssuesEntity entity)
     {
-      return entities.Select(entity=>new IssueModel(entity)).ToList();
+      return entity.Issues.Select(issue => new IssueModel(issue)).ToList();
     }
   }
 }

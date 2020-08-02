@@ -1,5 +1,4 @@
 ﻿using Domain.Domain.Issue;
-using System.Collections.Generic;
 
 namespace Domain.IntrastructureInterface
 {
@@ -8,7 +7,7 @@ namespace Domain.IntrastructureInterface
   /// </summary>
   public interface IIssueRepository
   {
-    List<IssueEntity> GetIssues();
-    bool SetIssues(List<IssueEntity> target);
+    IssuesEntity GetIssues();
+    bool SetIssues(IssuesEntity target);
   }
 }

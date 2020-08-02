@@ -1,5 +1,5 @@
-﻿using Domain.Domain.Issue;
-using Domain.Application.Model;
+﻿using Domain.Application.Model;
+using Domain.Domain.Issue;
 using Domain.IntrastructureInterface;
 using System.Collections.Generic;
 

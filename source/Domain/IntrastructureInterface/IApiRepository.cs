@@ -1,5 +1,4 @@
 ﻿using Domain.Domain.Issue;
-using System.Collections.Generic;
 
 namespace Domain.IntrastructureInterface
 {
@@ -8,6 +7,6 @@ namespace Domain.IntrastructureInterface
   /// </summary>
   public interface IApiRepository
   {
-    List<IssueEntity> GetLatestIssues();
+    IssuesEntity GetLatestIssues();
   }
 }

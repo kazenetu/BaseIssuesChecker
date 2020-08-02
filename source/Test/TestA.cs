@@ -1,6 +1,6 @@
-using Xunit;
-using Test.Repository;
 using Domain.Application;
+using Test.Repository;
+using Xunit;
 
 namespace Test
 {

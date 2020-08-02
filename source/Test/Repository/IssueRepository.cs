@@ -6,17 +6,16 @@ namespace Test.Repository
 {
   class IssueRepository : IIssueRepository
   {
-    private List<IssueEntity> issues = new List<IssueEntity>();
+    private IssuesEntity issues = IssuesEntity.Create(new List<IssueEntity>());
 
-    public List<IssueEntity> GetIssues()
+    public IssuesEntity GetIssues()
     {
       return issues;
     }
 
-    public bool SetIssues(List<IssueEntity> target)
+    public bool SetIssues(IssuesEntity target)
     {
-      issues.Clear();
-      issues.AddRange(target);
+      issues = target;
       return true;
     }
   }

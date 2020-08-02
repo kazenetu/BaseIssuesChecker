@@ -2,6 +2,7 @@
 using Domain.IntrastructureInterface;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace Intrastructure
@@ -22,7 +23,7 @@ namespace Intrastructure
     /// <summary>
     /// Issueデータ
     /// </summary>
-    private List<IssueEntity> issues = new List<IssueEntity>();
+    private IssuesEntity issues = IssuesEntity.Create(new List<IssueEntity>());
 
     /// <summary>
     /// 基本パス：実行ファイルのパス
@@ -59,7 +60,7 @@ namespace Intrastructure
     /// Issueデータの取得
     /// </summary>
     /// <returns>現在設定されているIssueデータ</returns>
-    public List<IssueEntity> GetIssues()
+    public IssuesEntity GetIssues()
     {
       return issues;
     }
@@ -69,10 +70,9 @@ namespace Intrastructure
     /// </summary>
     /// <param name="target">設定値</param>
     /// <returns>設定の成功/失敗</returns>
-    public bool SetIssues(List<IssueEntity> target)
+    public bool SetIssues(IssuesEntity target)
     {
-      issues.Clear();
-      issues.AddRange(target);
+      issues = target;
 
       saveIssueFile();
 
@@ -97,7 +97,8 @@ namespace Intrastructure
       {
         json = sr.ReadToEnd();
       }
-      issues.AddRange(JsonSerializer.Deserialize<List<IssueEntity>>(json));
+      var jsonIssues = JsonSerializer.Deserialize<List<JsonIssue>>(json);
+      issues = IssuesEntity.Create(jsonIssues.Select(item => item.ToDomainEntity()).ToList());
     }
 
     /// <summary>
@@ -105,7 +106,7 @@ namespace Intrastructure
     /// </summary>
     private void saveIssueFile()
     {
-      var json = JsonSerializer.Serialize(issues);
+      var json = JsonSerializer.Serialize(issues.Issues);
 
       var JSONFilePath = Path.Combine(baseDirectory, JSONFileName);
       using (var sw = new StreamWriter(JSONFilePath))

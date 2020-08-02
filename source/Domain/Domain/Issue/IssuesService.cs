@@ -1,5 +1,4 @@
 ﻿using Domain.IntrastructureInterface;
-using System.Collections.Generic;
 
 namespace Domain.Domain.Issue
 {
@@ -14,10 +13,10 @@ namespace Domain.Domain.Issue
     /// <param name="issueRepository">Issueリポジトリインスタンス</param>
     /// <param name="apiRepository">API呼び出しリポジトリインスタンス</param>
     /// <returns>最新差分Issue情報</returns>
-    public List<IssueEntity> GetIssues(IIssueRepository issueRepository,IApiRepository apiRepository)
+    public IssuesEntity GetIssues(IIssueRepository issueRepository, IApiRepository apiRepository)
     {
       // 前回取得結果を取得
-      var issuesEntity = IssuesEntity.Create(issueRepository.GetIssues());
+      var issuesEntity = issueRepository.GetIssues();
 
       // APIから最新Issueを取得
       var lastedIssues = apiRepository.GetLatestIssues();
