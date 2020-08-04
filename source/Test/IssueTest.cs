@@ -4,8 +4,8 @@ using Xunit;
 
 namespace Test
 {
-  [Trait("テスト", nameof(TestA))]
-  public class TestA
+  [Trait("Issueテスト", nameof(IssueTest))]
+  public class IssueTest
   {
     private IssueRepository issueRepository = new IssueRepository();
     private ApiRepository apiRepository = new ApiRepository();
