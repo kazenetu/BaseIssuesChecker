@@ -11,7 +11,7 @@ namespace Test
     private ApiRepository apiRepository = new ApiRepository();
 
 
-    [Fact]
+    [Fact(DisplayName = "FisrtIssuesTest")]
     public void FisrtIssuesTest()
     {
       apiRepository.JsonText = @"
@@ -52,7 +52,7 @@ namespace Test
       Assert.True(issues[0].user.login == "user");
     }
 
-    [Fact]
+    [Fact(DisplayName = "ModifyIssuesTest")]
     public void ModifyIssuesTest()
     {
       apiRepository.JsonText = @"
@@ -121,7 +121,7 @@ namespace Test
       Assert.True(issues[0].user.login == "user");
     }
 
-    [Fact]
+    [Fact(DisplayName = "AddIssuesTest")]
     public void AddIssuesTest()
     {
 
@@ -216,7 +216,7 @@ namespace Test
       Assert.True(issues[0].user.login == "userA");
     }
 
-    [Fact]
+    [Fact(DisplayName = "RemoveIssuesTest")]
     public void RemoveIssuesTest()
     {
 
@@ -309,7 +309,7 @@ namespace Test
       Assert.True(issues.Count == 0);
     }
 
-    [Fact]
+    [Fact(DisplayName = "AddAndModifyIssuesTest")]
     public void AddAndModifyIssuesTest()
     {
 
@@ -406,7 +406,7 @@ namespace Test
       Assert.True(issues[1].user.login == "userA");
     }
 
-    [Fact]
+    [Fact(DisplayName = "AddAndRemoveIssuesTest")]
     public void AddAndRemoveIssuesTest()
     {
 
