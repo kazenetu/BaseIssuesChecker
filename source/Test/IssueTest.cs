@@ -11,7 +11,7 @@ namespace Test
     private ApiRepository apiRepository = new ApiRepository();
 
 
-    [Fact(DisplayName = "FisrtIssuesTest")]
+    [Fact(DisplayName = "JSON読み取り")]
     public void FisrtIssuesTest()
     {
       apiRepository.JsonText = @"
@@ -52,7 +52,7 @@ namespace Test
       Assert.True(issues[0].user.login == "user");
     }
 
-    [Fact(DisplayName = "ModifyIssuesTest")]
+    [Fact(DisplayName = "更新日更新の検出")]
     public void ModifyIssuesTest()
     {
       apiRepository.JsonText = @"
@@ -121,7 +121,7 @@ namespace Test
       Assert.True(issues[0].user.login == "user");
     }
 
-    [Fact(DisplayName = "AddIssuesTest")]
+    [Fact(DisplayName = "Issue追加分の差分")]
     public void AddIssuesTest()
     {
 
@@ -216,7 +216,7 @@ namespace Test
       Assert.True(issues[0].user.login == "userA");
     }
 
-    [Fact(DisplayName = "RemoveIssuesTest")]
+    [Fact(DisplayName = "closeしたIssueは検出対象外")]
     public void RemoveIssuesTest()
     {
 
@@ -309,7 +309,7 @@ namespace Test
       Assert.True(issues.Count == 0);
     }
 
-    [Fact(DisplayName = "AddAndModifyIssuesTest")]
+    [Fact(DisplayName = "更新日更新とIssue追加の差分検出")]
     public void AddAndModifyIssuesTest()
     {
 
@@ -406,7 +406,7 @@ namespace Test
       Assert.True(issues[1].user.login == "userA");
     }
 
-    [Fact(DisplayName = "AddAndRemoveIssuesTest")]
+    [Fact(DisplayName = "closeの未検出と追加したIssueの検出")]
     public void AddAndRemoveIssuesTest()
     {
 
